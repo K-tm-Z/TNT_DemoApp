@@ -1,0 +1,281 @@
+.quote-page {
+  padding: 24px 16px 48px;
+  background: #e8e8e8;
+  min-height: 100vh;
+}
+
+.toolbar {
+  max-width: 720px;
+  margin: 0 auto 16px;
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+}
+
+.toolbar button {
+  border: 1px solid #333;
+  background: #fff;
+  padding: 8px 16px;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.toolbar button:hover:not(:disabled) {
+  background: #f5f5f5;
+}
+
+.toolbar button:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+.quote-report {
+  max-width: 720px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 28px 32px 24px;
+  color: #111;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 15px;
+  line-height: 1.35;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.12);
+}
+
+.quote-header {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  margin-bottom: 12px;
+}
+
+.logo-box {
+  width: 72px;
+  height: 72px;
+  border: 2px solid #222;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  flex-shrink: 0;
+  font-weight: 700;
+  font-size: 28px;
+  font-family: Arial, sans-serif;
+}
+
+.logo-t {
+  color: #1a56db;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-right: 1px solid #ccc;
+}
+
+.logo-n {
+  color: #dc2626;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.company-info h1 {
+  margin: 0 0 4px;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: #111;
+}
+
+.company-info p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.recipient-line {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin: 16px 0 20px;
+  font-size: 15px;
+}
+
+.recipient-line input {
+  flex: 1;
+  border: none;
+  border-bottom: 1px dotted #666;
+  font: inherit;
+  background: transparent;
+  padding: 2px 4px;
+}
+
+.quote-title {
+  text-align: center;
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0 0 16px;
+  letter-spacing: 1px;
+  color: #111;
+}
+
+.quote-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.quote-table th,
+.quote-table td {
+  border: 1px solid #222;
+  padding: 6px 8px;
+  vertical-align: middle;
+}
+
+.quote-table th {
+  font-weight: 700;
+  text-align: center;
+  font-size: 14px;
+}
+
+.quote-table .col-name {
+  width: 28%;
+  text-align: left;
+}
+
+.quote-table .col-size {
+  width: 12%;
+  text-align: center;
+}
+
+.quote-table .col-price {
+  width: 20%;
+  text-align: right;
+}
+
+.quote-table .col-qty {
+  width: 10%;
+  text-align: center;
+}
+
+.quote-table .col-total {
+  width: 22%;
+  text-align: right;
+}
+
+.quote-table select,
+.quote-table input[type='number'] {
+  width: 100%;
+  border: none;
+  background: #fafafa;
+  font: inherit;
+  padding: 4px;
+  box-sizing: border-box;
+}
+
+.quote-table input[type='number'] {
+  text-align: center;
+}
+
+.col-actions {
+  width: 36px;
+  border: none !important;
+  background: transparent !important;
+}
+
+.remove-row {
+  border: none;
+  background: transparent;
+  color: #999;
+  font-size: 20px;
+  cursor: pointer;
+  line-height: 1;
+  padding: 0 4px;
+}
+
+.remove-row:hover {
+  color: #c00;
+}
+
+.total-label {
+  font-weight: 700;
+  text-align: right;
+  border-top: 2px solid #222 !important;
+}
+
+.grand-total {
+  font-weight: 700;
+  border-top: 2px solid #222 !important;
+}
+
+.quote-footer {
+  margin-top: 20px;
+}
+
+.footer-field {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.footer-field input {
+  border: none;
+  border-bottom: 1px dotted #666;
+  font: inherit;
+  background: transparent;
+  padding: 2px 4px;
+  min-width: 80px;
+}
+
+.date-inputs input {
+  width: 36px;
+  text-align: center;
+}
+
+.date-inputs input:last-child {
+  width: 52px;
+}
+
+.footer-note {
+  margin: 24px 0 0;
+  font-size: 12px;
+  font-style: italic;
+  font-weight: bold;
+  color: #cf1515;
+}
+
+/* PDF export: show static values, hide form controls */
+.pdf-export .screen-only,
+.pdf-export .col-actions {
+  display: none !important;
+}
+
+.pdf-export .print-value {
+  display: inline !important;
+}
+
+.print-value {
+  display: none;
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+
+  .quote-page {
+    padding: 0;
+    background: #fff;
+  }
+
+  .quote-report {
+    box-shadow: none;
+    max-width: 100%;
+  }
+
+  .screen-only,
+  .col-actions {
+    display: none !important;
+  }
+
+  .print-value {
+    display: inline !important;
+  }
+}
